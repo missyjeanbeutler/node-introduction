@@ -21,6 +21,11 @@ module.exports = {
     res.status(200).send(books);
   },
   delete: (req, res) => {
-    
+    books = books.filter(e => {
+      if(e.id !== +req.params.id) {
+        return e
+      }
+    })
+    res.status(200).send(books)
   }
 }
