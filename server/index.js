@@ -5,7 +5,7 @@ const express = require('express'),
 
 
 app.use(bodyParser.json())
-express.static(__dirname + '/../public/build')
+app.use(express.static(__dirname + '/../public/build'))
 
 const bc = require(__dirname + '/controllers/books_controller.js')
 
